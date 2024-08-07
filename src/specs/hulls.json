@@ -1,0 +1,19 @@
+[   
+    {
+        "name": "Demetrix",
+        "maxMass": 18000,
+        "slots": {
+            "weapon": 4,
+            "armor": 2
+        }
+    },
+    {
+        "name": "Vorlung",
+        "maxMass": 21450,
+        "slots": {
+            "weapon": 2,
+            "armor": 3,
+            "special": 1
+        }
+    }
+]
