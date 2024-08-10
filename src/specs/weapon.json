@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Temper Beam 1",
+        "mass": "250",
+        "dps": "1"
+    },
+    {
+        "name": "Temper Beam 2",
+        "mass": "350",
+        "dps": "3"
+    },
+    {
+        "name": "Refulgence Ray 1",
+        "mass": "8000",
+        "dps": "12"
+    }
+]

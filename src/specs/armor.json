@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Unobtanium Armor 1",
+        "health": 15800000
+    },
+    {
+        "name": "Unobtanium Armor 2",
+        "health": 25500000
+    },
+    {
+        "name": "Cheap Plastic Armor 2",
+        "health": -4
+    }
+]
