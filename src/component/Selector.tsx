@@ -1,9 +1,10 @@
-import * as hullDefinitions from '../specs/hull.json';
-import * as weaponDefinitions from '../specs/weapon.json';
-import * as armorDefinitions from '../specs/armor.json';
-import * as specialDefinitions from '../specs/special.json';
+import * as hullDefinitions from '../definition/hull.json';
+import * as weaponDefinitions from '../definition/weapon.json';
+import * as armorDefinitions from '../definition/armor.json';
+import * as specialDefinitions from '../definition/special.json';
 import { useState } from 'react';
 import Select from 'react-select';
+import React from 'react';
 
 function emptyShip(hullDefinition){
   return hullDefinition == null ? null : {hull: hullDefinition, equipment: [], specialEffects: []};
