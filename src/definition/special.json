@@ -1,16 +1,18 @@
 [
     {
-        "name": "Beam Lens 1",
-        "effect": {
-            "weaponMass": 0.04,
-            "energyDps": 0.10
-        }
-    },
-    {
-        "name": "Beam Lens 2",
-        "effect": {
-            "weaponMass": 0.08,
-            "energyDps": 0.13
-        }
+        "name": "Viltality Rounds 1",
+        "modifiers": [
+            {
+                "modifierType": "MASS",
+                "equipmentType": "WEAPON",
+                "massPercent": 3
+            }
+        ],
+        "restrictions": [
+            {
+                "restrictionType": "TIER",
+                "allowedTiers": ["T13", "T14"]
+            }
+        ]
     }
 ]

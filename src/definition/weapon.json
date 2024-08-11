@@ -1,17 +1,16 @@
 [
     {
-        "name": "Temper Beam 1",
+        "name": "Vicious Ray 1",
         "mass": "250",
-        "dps": "1"
+        "weaponType": "RAY_CANNON",
+        "daamageType": "ENERGY",
+        "dps": 21894
     },
     {
-        "name": "Temper Beam 2",
-        "mass": "350",
-        "dps": "3"
-    },
-    {
-        "name": "Refulgence Ray 1",
-        "mass": "8000",
-        "dps": "12"
+        "name": "Blood Aorta Vulcan 4",
+        "mass": "6151",
+        "weaponType": "VULCAN",
+        "daamageType": "BLOOD",
+        "dps": 32500
     }
 ]

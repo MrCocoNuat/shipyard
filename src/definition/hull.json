@@ -1,19 +1,208 @@
-[   
+[
     {
-        "name": "Demetrix",
-        "maxMass": 18000,
-        "slots": {
-            "weapon": 4,
-            "armor": 2
+        "name": "Hellion",
+        "tier": "T14",
+        "faction": "NIGHTFALL_COALITION",
+        "class" : "BATTLECRUISER",
+        "unladenMass": 900,
+        "atUpgrade": {
+            "MK1": {
+                "maxMass": 18000,
+                "slots": {
+                    "ARMOR": 2,
+                    "SHIELD": 1,
+                    "WEAPON": 3,
+                    "BLOOD_WEAPON": 1,
+                    "SPECIAL": 1,
+                    "UPGRADE": 1,
+                    "TRIGGER": 1
+                },
+                "modifiers": [
+                    {
+                        "modifierType": "MASS",
+                        "equipmentType": "SHIELD",
+                        "massPercent": -20
+                    }
+                ]
+            },
+            "MK2": {
+                "maxMass": 19000,
+                "slots": {
+                    "ARMOR": 2,
+                    "SHIELD": 1,
+                    "WEAPON": 3,
+                    "BLOOD_WEAPON": 1,
+                    "SPECIAL": 1,
+                    "UPGRADE": 1,
+                    "TRIGGER": 1
+                },
+                "modifiers": [
+                    {
+                        "modifierType": "MASS",
+                        "equipmentType": "SHIELD",
+                        "massPercent": -20
+                    }
+                ]
+            },
+            "MK3": {
+                "maxMass": 20000,
+                "slots": {
+                    "ARMOR": 2,
+                    "SHIELD": 2,
+                    "WEAPON": 3,
+                    "BLOOD_WEAPON": 1,
+                    "SPECIAL": 1,
+                    "UPGRADE": 1,
+                    "TRIGGER": 1
+                },
+                "modifiers": [
+                    {
+                        "modifierType": "MASS",
+                        "equipmentType": "WEAPON",
+                        "massPercent": -25
+                    },
+                    {
+                        "modifierType": "MASS",
+                        "equipmentType": "BLOOD_WEAPON",
+                        "massPercent": -25
+                    },
+                    {
+                        "modifierType": "MASS",
+                        "equipmentType": "ARMOR",
+                        "massPercent": -30
+                    },
+                    {
+                        "modifierType": "MASS",
+                        "equipmentType": "SHIELD",
+                        "massPercent": -25
+                    }
+                ]
+            },
+            "MK4": {
+                "maxMass": 21000,
+                "slots": {
+                    "ARMOR": 2,
+                    "SHIELD": 2,
+                    "WEAPON": 3,
+                    "BLOOD_WEAPON": 1,
+                    "SPECIAL": 1,
+                    "UPGRADE": 1,
+                    "RESISTOR": 1,
+                    "TRIGGER": 1
+                },
+                "modifiers": [
+                    {
+                        "modifierType": "MASS",
+                        "equipmentType": "WEAPON",
+                        "massPercent": -25
+                    },
+                    {
+                        "modifierType": "MASS",
+                        "equipmentType": "BLOOD_WEAPON",
+                        "massPercent": -25
+                    },
+                    {
+                        "modifierType": "MASS",
+                        "equipmentType": "ARMOR",
+                        "massPercent": -30
+                    },
+                    {
+                        "modifierType": "MASS",
+                        "equipmentType": "SHIELD",
+                        "massPercent": -25
+                    }
+                ]
+            },
+            "MK5": {
+                "maxMass": 22000,
+                "slots": {
+                    "ARMOR": 2,
+                    "SHIELD": 2,
+                    "WEAPON": 3,
+                    "BLOOD_WEAPON": 1,
+                    "SPECIAL": 2,
+                    "UPGRADE": 1,
+                    "RESISTOR": 1,
+                    "TRIGGER": 1
+                },
+                "modifiers": [
+                    {
+                        "modifierType": "MASS",
+                        "equipmentType": "WEAPON",
+                        "massPercent": -35
+                    },
+                    {
+                        "modifierType": "MASS",
+                        "equipmentType": "BLOOD_WEAPON",
+                        "massPercent": -35
+                    },
+                    {
+                        "modifierType": "MASS",
+                        "equipmentType": "ARMOR",
+                        "massPercent": -40
+                    },
+                    {
+                        "modifierType": "MASS",
+                        "equipmentType": "SHIELD",
+                        "massPercent": -35
+                    }
+                ]
+            },
+            "ELITE": {
+                "maxMass": 23000,
+                "slots": {
+                    "ARMOR": 3,
+                    "SHIELD": 2,
+                    "WEAPON": 3,
+                    "BLOOD_WEAPON": 1,
+                    "SPECIAL": 2,
+                    "UPGRADE": 1,
+                    "RESISTOR": 1,
+                    "TRIGGER": 1
+                },
+                "modifiers": [
+                    {
+                        "modifierType": "MASS",
+                        "equipmentType": "WEAPON",
+                        "massPercent": -50
+                    },
+                    {
+                        "modifierType": "MASS",
+                        "equipmentType": "BLOOD_WEAPON",
+                        "massPercent": -50
+                    },
+                    {
+                        "modifierType": "MASS",
+                        "equipmentType": "ARMOR",
+                        "massPercent": -55
+                    },
+                    {
+                        "modifierType": "MASS",
+                        "equipmentType": "SHIELD",
+                        "massPercent": -50
+                    }
+                ]
+            }
         }
     },
     {
-        "name": "Vorlung",
-        "maxMass": 21450,
-        "slots": {
-            "weapon": 2,
-            "armor": 3,
-            "special": 1
+        "name": "Segmenter",
+        "tier": "T13",
+        "faction": "VEGA_ALLIANCE",
+        "class": "SPECIALIST",
+        "unladenMass": 400,
+        "atUpgrade": {
+            "MK1": {
+                "maxMass": 19000,
+                "slots": {
+                    "BLOOD_WEAPON": 4,
+                    "ARMOR": 2,
+                    "SHIELD": 2,
+                    "SPECIAL": 2,
+                    "TRIGGER": 1,
+                    "UPGRADE": 1
+                }
+            }
         }
     }
 ]

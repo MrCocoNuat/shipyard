@@ -1,28 +1,29 @@
 [
     {
-        "name": "Chronal Armor 1",
+        "name": "Temporal Shield 1",
         "mass": 2023,
-        "health": 420000,
+        "energy": 255000,
+        "absorbancePercent": 90,
         "modifiers": [
             {
-                "modifierType": "ARMOR_RESISTANCE",
+                "modifierType": "DEFENSE_RESISTANCE",
                 "damageType": "EXPLOSIVE",
-                "resistancePercent": 10
+                "resistancePercent": 50
             },
             {
-                "modifierType": "ARMOR_RESISTANCE",
-                "damageType": "KINETIC",
-                "resistancePercent": 10
-            },
-            {
-                "modifierType": "ARMOR_RESISTANCE",
+                "modifierType": "DEFENSE_RESISTANCE",
                 "damageType": "ENERGY",
-                "resistancePercent": 10
+                "resistancePercent": 50
             },
             {
-                "modifierType": "ARMOR_RESISTANCE",
+                "modifierType": "DEFENSE_RESISTANCE",
+                "damageType": "KINETIC",
+                "resistancePercent": 50
+            },
+            {
+                "modifierType": "DEFENSE_RESISTANCE",
                 "damageType": "BLOOD",
-                "resistancePercent": 10
+                "resistancePercent": 40
             }
         ],
         "restrictions": [
@@ -37,29 +38,30 @@
         ]
     },
     {
-        "name": "Chronal Armor 2",
+        "name": "Temporal Shield 2",
         "mass": 2548,
-        "health": 520000,
+        "energy": 412500,
+        "absorbancePercent": 90,
         "modifiers": [
             {
-                "modifierType": "ARMOR_RESISTANCE",
+                "modifierType": "DEFENSE_RESISTANCE",
                 "damageType": "EXPLOSIVE",
-                "resistancePercent": 15
+                "resistancePercent": 50
             },
             {
-                "modifierType": "ARMOR_RESISTANCE",
-                "damageType": "KINETIC",
-                "resistancePercent": 15
-            },
-            {
-                "modifierType": "ARMOR_RESISTANCE",
+                "modifierType": "DEFENSE_RESISTANCE",
                 "damageType": "ENERGY",
-                "resistancePercent": 15
+                "resistancePercent": 50
             },
             {
-                "modifierType": "ARMOR_RESISTANCE",
+                "modifierType": "DEFENSE_RESISTANCE",
+                "damageType": "KINETIC",
+                "resistancePercent": 50
+            },
+            {
+                "modifierType": "DEFENSE_RESISTANCE",
                 "damageType": "BLOOD",
-                "resistancePercent": 10
+                "resistancePercent": 40
             }
         ],
         "restrictions": [
@@ -74,29 +76,30 @@
         ]
     },
     {
-        "name": "Chronal Armor 3",
+        "name": "Temporal Shield 3",
         "mass": 3032,
-        "health": 650000,
+        "energy": 545000,
+        "absorbancePercent": 90,
         "modifiers": [
             {
-                "modifierType": "ARMOR_RESISTANCE",
+                "modifierType": "DEFENSE_RESISTANCE",
                 "damageType": "EXPLOSIVE",
-                "resistancePercent": 20
+                "resistancePercent": 50
             },
             {
-                "modifierType": "ARMOR_RESISTANCE",
-                "damageType": "KINETIC",
-                "resistancePercent": 20
-            },
-            {
-                "modifierType": "ARMOR_RESISTANCE",
+                "modifierType": "DEFENSE_RESISTANCE",
                 "damageType": "ENERGY",
-                "resistancePercent": 20
+                "resistancePercent": 50
             },
             {
-                "modifierType": "ARMOR_RESISTANCE",
+                "modifierType": "DEFENSE_RESISTANCE",
+                "damageType": "KINETIC",
+                "resistancePercent": 50
+            },
+            {
+                "modifierType": "DEFENSE_RESISTANCE",
                 "damageType": "BLOOD",
-                "resistancePercent": 15
+                "resistancePercent": 40
             }
         ],
         "restrictions": [
@@ -111,32 +114,33 @@
         ]
     },
     {
-        "name": "Chronal Armor 4",
+        "name": "Temporal Shield 4",
         "mass": 4080,
-        "health": 720000,
+        "energy": 600000,
+        "absorbancePercent": 90,
         "modifiers": [
             {
-                "modifierType": "ARMOR_RESISTANCE",
+                "modifierType": "DEFENSE_RESISTANCE",
                 "damageType": "EXPLOSIVE",
-                "resistancePercent": 20
+                "resistancePercent": 50
             },
             {
-                "modifierType": "ARMOR_RESISTANCE",
-                "damageType": "KINETIC",
-                "resistancePercent": 20
-            },
-            {
-                "modifierType": "ARMOR_RESISTANCE",
+                "modifierType": "DEFENSE_RESISTANCE",
                 "damageType": "ENERGY",
-                "resistancePercent": 20
+                "resistancePercent": 50
             },
             {
-                "modifierType": "ARMOR_RESISTANCE",
+                "modifierType": "DEFENSE_RESISTANCE",
+                "damageType": "KINETIC",
+                "resistancePercent": 50
+            },
+            {
+                "modifierType": "DEFENSE_RESISTANCE",
                 "damageType": "BLOOD",
-                "resistancePercent": 15
+                "resistancePercent": 40
             },
             {
-                "modifierType": "ARMOR_RESISTANCE",
+                "modifierType": "DEFENSE_RESISTANCE",
                 "damageType": "QUANTUM",
                 "resistancePercent": 20
             }
