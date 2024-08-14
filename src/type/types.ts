@@ -3,7 +3,8 @@ import { DotToken, EnumType, EqualsToken } from "typescript";
 export enum RestrictionType {
     TIER = "TIER",
     FACTION = "FACTION",
-    CLASS = "CLASS"
+    CLASS = "CLASS",
+    BLOOD = "BLOOD",
 } 
 export type Restriction = TierRestriction | FactionRestriction | ClassRestriction;
 export type TierRestriction = {
@@ -17,6 +18,14 @@ export type FactionRestriction = {
 export type ClassRestriction = {
     restrictionType: RestrictionType.CLASS
     allowedClasses: Class[]
+}
+export enum BloodRestrictionType {
+    CAN_BE_BLOOD = "CAN_BE_BLOOD", // can be fit in both Weapon and Blood Weapon slots
+    MUST_BE_BLOOD = "MUST_BE_BLOOD" // can only be fit into Blood Weapon slots
+}
+export type BloodRestriction = {
+    restrictionType: RestrictionType.BLOOD,
+    bloodRestrictionType: BloodRestrictionType
 }
 
 export enum EquipmentType {
@@ -36,7 +45,7 @@ export enum EquipmentType {
     SKIN = "SKIN",
     BLOOD_WEAPON = "BLOOD_WEAPON"
 }
-const DEFENSE_TYPES = [EquipmentType.SHIELD, EquipmentType.ABLATOR, EquipmentType.SCREEN]
+const DEFENSE_TYPES = [EquipmentType.SHIELD, EquipmentType.ABLATOR, EquipmentType.SCREEN] as const;
 
 export type Equipment = Armor | Shield | Ablator;
 
@@ -46,7 +55,9 @@ export type Weapon = {
     mass: number,
     weaponType: WeaponType,
     damageType: DamageType,
-    dps: number
+    dps: number,
+    modifiers: Modifier[]
+    restrictions: Restriction[]
 }
 
 export type Armor = {
@@ -165,7 +176,7 @@ export enum Class {
     SECTOR_FLAGSHIP = "SECTOR_FLAGSHIP"
 }
 
-const FLAGSHIP_CLASSES = [Class.CARRIER, Class.DREADNOUGHT, Class.SECTOR_FLAGSHIP]
+const FLAGSHIP_CLASSES = [Class.CARRIER, Class.DREADNOUGHT, Class.SECTOR_FLAGSHIP] as const;
 
 export enum Tier {
     T1 = "T1",
@@ -220,9 +231,9 @@ export type Hull = {
     faction : Faction,
     class: Class,
     unladenMass: number,
-    atUpgrade : {[upgrade in Upgrade] : 
+    atUpgrade : {[upgrade in Upgrade]? : 
         {
-        slots: {[equipmentType in EquipmentType] : number | null}
+        slots: {[equipmentType in EquipmentType]? : number}
         maxMass: number,
         modifiers: Modifier[]
         } | undefined
@@ -231,7 +242,8 @@ export type Hull = {
 
 
 export type Ship = {
-    hull: Hull
-    equipment: any[]
+    hull: Hull,
+    upgrade: Upgrade,
+    equipment: {[equipmentType in EquipmentType]? : Equipment[]}
 }
 

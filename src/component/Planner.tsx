@@ -1,20 +1,21 @@
 import { useState } from 'react';
 import Select from 'react-select';
 import React from 'react';
-import {hulls} from '../definition/DefinitionProvider.ts';
+import { Ship } from '../type/types.ts';
+import HullSelector from './HullSelector.tsx';
+import EquipmentSelector from './EquipmentSelector.tsx';
 
-function emptyShip(hullDefinition){
-  return hullDefinition == null ? null : {hull: hullDefinition, equipment: [], specialEffects: []};
-}
+
 
 function Selector() {
-    const [ship, setShip] = useState(null);
-    console.log(hulls);
+    const [ship, setShip] = useState(null as Ship | null);
+    console.log("Current ship:", ship);
 
     return (
       <div className="selector">
         <div className="hull-selector">
-          {"look in log"}
+          <HullSelector ship={ship} setShip={setShip}/>
+          <EquipmentSelector ship={ship} setShip={setShip}/>
           {/* <Select options={Array.from(hullDefinitions).map(hullDefinition => ({value: hullDefinition, label: hullDefinition.name}))} onChange={(hullDefinition) => setShip(emptyShip(hullDefinition.value))}/> */}
           {/* <p>{ship && ship.hull.maxMass}</p> */}
         </div>

@@ -201,6 +201,192 @@
                     "SPECIAL": 2,
                     "TRIGGER": 1,
                     "UPGRADE": 1
+                },
+                "modifiers": [
+                    {
+                        "modifierType": "MASS",
+                        "equipmentType": "ARMOR",
+                        "massPercent": -10
+                    },
+                    {
+                        "modifierType": "MASS",
+                        "equipmentType": "SHIELD",
+                        "massPercent": -20
+                    }
+                ]
+            },
+            "MK2": {
+                "maxMass": 20000,
+                "slots": {
+                    "BLOOD_WEAPON": 4,
+                    "ARMOR": 3,
+                    "SHIELD": 2,
+                    "SPECIAL": 2,
+                    "TRIGGER": 1,
+                    "UPGRADE": 1
+                },
+                "modifiers": [
+                    {
+                        "modifierType": "MASS",
+                        "equipmentType": "ARMOR",
+                        "massPercent": -20
+                    },
+                    {
+                        "modifierType": "MASS",
+                        "equipmentType": "SHIELD",
+                        "massPercent": -15
+                    }
+                ]
+            },
+            "MK3": {
+                "maxMass": 21000,
+                "slots": {
+                    "BLOOD_WEAPON": 4,
+                    "ARMOR": 3,
+                    "SHIELD": 3,
+                    "SPECIAL": 2,
+                    "TRIGGER": 1,
+                    "UPGRADE": 1
+                },
+                "modifiers": [
+                    {
+                        "modifierType": "MASS",
+                        "equipmentType": "WEAPON",
+                        "massPercent": -30
+                    },
+                    {
+                        "modifierType": "MASS",
+                        "equipmentType": "BLOOD_WEAPON",
+                        "massPercent": -30
+                    },
+                    {
+                        "modifierType": "MASS",
+                        "equipmentType": "ARMOR",
+                        "massPercent": -40
+                    },
+                    {
+                        "modifierType": "MASS",
+                        "equipmentType": "SHIELD",
+                        "massPercent": -40
+                    }
+                ]
+            },
+            "MK4": {
+                "maxMass": 22000,
+                "slots": {
+                    "BLOOD_WEAPON": 4,
+                    "ARMOR": 3,
+                    "SHIELD": 3,
+                    "SPECIAL": 2,
+                    "TRIGGER": 1,
+                    "UPGRADE": 1,
+                    "RESISTOR": 1
+                },
+                "modifiers": [
+                    {
+                        "modifierType": "MASS",
+                        "equipmentType": "WEAPON",
+                        "massPercent": -30
+                    },
+                    {
+                        "modifierType": "MASS",
+                        "equipmentType": "BLOOD_WEAPON",
+                        "massPercent": -30
+                    },
+                    {
+                        "modifierType": "MASS",
+                        "equipmentType": "ARMOR",
+                        "massPercent": -40
+                    },
+                    {
+                        "modifierType": "MASS",
+                        "equipmentType": "SHIELD",
+                        "massPercent": -40
+                    }
+                ]
+            },
+            "MK5": {
+                "maxMass": 23000,
+                "slots": {
+                    "BLOOD_WEAPON": 4,
+                    "ARMOR": 3,
+                    "SHIELD": 3,
+                    "SPECIAL": 2,
+                    "TRIGGER": 1,
+                    "UPGRADE": 1,
+                    "RESISTOR": 1
+                },
+                "modifiers": [
+                    {
+                        "modifierType": "MASS",
+                        "equipmentType": "WEAPON",
+                        "massPercent": -45
+                    },
+                    {
+                        "modifierType": "MASS",
+                        "equipmentType": "BLOOD_WEAPON",
+                        "massPercent": -45
+                    },
+                    {
+                        "modifierType": "MASS",
+                        "equipmentType": "ARMOR",
+                        "massPercent": -50
+                    },
+                    {
+                        "modifierType": "MASS",
+                        "equipmentType": "SHIELD",
+                        "massPercent": -55
+                    }
+                ]
+            },
+            "ELITE": {
+                "maxMass": 24000,
+                "slots": {
+                    "BLOOD_WEAPON": 4,
+                    "ARMOR": 3,
+                    "SHIELD": 3,
+                    "SPECIAL": 2,
+                    "TRIGGER": 1,
+                    "UPGRADE": 1,
+                    "RESISTOR": 1
+                },
+                "modifiers": [
+                    {
+                        "modifierType": "MASS",
+                        "equipmentType": "WEAPON",
+                        "massPercent": -50
+                    },
+                    {
+                        "modifierType": "MASS",
+                        "equipmentType": "BLOOD_WEAPON",
+                        "massPercent": -50
+                    },
+                    {
+                        "modifierType": "MASS",
+                        "equipmentType": "ARMOR",
+                        "massPercent": -60
+                    },
+                    {
+                        "modifierType": "MASS",
+                        "equipmentType": "SHIELD",
+                        "massPercent": -55
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "name": "Pathfinder",
+        "tier": "T1",
+        "faction": "MINER_REBELLION",
+        "class" : "CORVETTE",
+        "unladenMass": 5,
+        "atUpgrade": {
+            "MK1": {
+                "maxMass": 40,
+                "slots": {
+                    "WEAPON": 1,
+                    "ARMOR": 1
                 }
             }
         }
