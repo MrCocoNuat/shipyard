@@ -3,6 +3,7 @@ import Select from 'react-select';
 import {hulls} from '../definition/DefinitionProvider.ts';
 import React from "react";
 import { toOption, toOptionRaw, toOptions, toOptionsRaw } from "./labeler.ts";
+import { getAllEnumValues } from "enum-for";
 
 function upgradesOf(hull: Hull){
     return Object.values(Upgrade).filter(upgrade => hull.atUpgrade[upgrade]);
@@ -12,15 +13,15 @@ function emptyShip(hull : Hull | null, upgrade : Upgrade) : Ship | null {
     return hull == null ? null : {hull: hull, upgrade: upgrade, equipment: emptyEquipment(hull, upgrade)};
 }
 
-function emptyEquipment(hull: Hull | null, upgrade : Upgrade) :  {[equipmentType in EquipmentType]? : Equipment[]}{
+function emptyEquipment(hull: Hull | null, upgrade : Upgrade) :  {[equipmentType in EquipmentType] : Equipment[]}{
+    const equipment = {};
     const upgradeConfig = hull?.atUpgrade[upgrade];
     if (!upgradeConfig){
-        return {};
+        throw Error(`Upgrade not supported ${hull}, ${upgrade}`);    
     }
     const slotConfig = upgradeConfig.slots;
-    const equipment = {};
-    Object.entries(slotConfig).forEach(([equipmentType, slotCount]) => equipment[equipmentType] = Array(slotCount))
-    return equipment;
+    getAllEnumValues(EquipmentType).forEach(equipmentType => equipment[equipmentType] = Array(slotConfig[equipmentType] || 0));
+    return equipment as {[equipmentType in EquipmentType] : Equipment[]};
 }
 
 // yes, some of these should be useContext. I don't care.

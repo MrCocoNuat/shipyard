@@ -6,18 +6,27 @@ export enum RestrictionType {
     CLASS = "CLASS",
     BLOOD = "BLOOD",
 } 
-export type Restriction = TierRestriction | FactionRestriction | ClassRestriction;
+export type Restriction = TierRestriction | FactionRestriction | ClassRestriction | BloodRestriction;
 export type TierRestriction = {
     restrictionType: RestrictionType.TIER
     allowedTiers: Tier[],
 }    
+export function isTierRestriction(restriction : Restriction) : restriction is TierRestriction{
+    return restriction.restrictionType === RestrictionType.TIER;
+}
 export type FactionRestriction = {
     restrictionType: RestrictionType.FACTION
     allowedFactions: Faction[]
 }
+export function isFactionRestriction(restriction : Restriction) : restriction is FactionRestriction{
+    return restriction.restrictionType === RestrictionType.FACTION;
+}
 export type ClassRestriction = {
     restrictionType: RestrictionType.CLASS
     allowedClasses: Class[]
+}
+export function isClassRestriction(restriction : Restriction) : restriction is ClassRestriction{
+    return restriction.restrictionType === RestrictionType.CLASS;
 }
 export enum BloodRestrictionType {
     CAN_BE_BLOOD = "CAN_BE_BLOOD", // can be fit in both Weapon and Blood Weapon slots
@@ -26,6 +35,9 @@ export enum BloodRestrictionType {
 export type BloodRestriction = {
     restrictionType: RestrictionType.BLOOD,
     bloodRestrictionType: BloodRestrictionType
+}
+export function isBloodRestriction(restriction : Restriction) : restriction is BloodRestriction{
+    return restriction.restrictionType === RestrictionType.BLOOD;
 }
 
 export enum EquipmentType {
@@ -209,20 +221,32 @@ export type MassModifier = {
     equipmentType: EquipmentType | null, // null implies whole ship mass
     massPercent: number
 }
+export function isMassModifier(modifier : Modifier) : modifier is MassModifier {
+    return modifier.modifierType === ModifierType.MASS;
+}
 export type ArmorResistanceModifier = {
     modifierType: ModifierType.ARMOR_RESISTANCE,
     damageType: DamageType,
     resistancePercent: number
+}
+export function isArmorResistanceModifier(modifier : Modifier) : modifier is ArmorResistanceModifier {
+    return modifier.modifierType === ModifierType.ARMOR_RESISTANCE;
 }
 export type DefenseResistanceModifier = {
     modifierType: ModifierType.DEFENSE_RESISTANCE,
     damageType: DamageType,
     resistancePercent: number
 }
+export function isDefenseResistanceModifier(modifier : Modifier) : modifier is DefenseResistanceModifier {
+    return modifier.modifierType === ModifierType.DEFENSE_RESISTANCE;
+}
 export type ShipResistanceModifier = {
     modifierType: ModifierType.SHIP_RESISTANCE,
     damageType: DamageType,
     resistancePercent: number
+}
+export function isShipResistanceModifier(modifier : Modifier) : modifier is ShipResistanceModifier {
+    return modifier.modifierType === ModifierType.SHIP_RESISTANCE;
 }
 
 export type Hull = {
@@ -244,6 +268,7 @@ export type Hull = {
 export type Ship = {
     hull: Hull,
     upgrade: Upgrade,
-    equipment: {[equipmentType in EquipmentType]? : Equipment[]}
+    equipment: {[equipmentType in EquipmentType] : {[index in number]: Equipment}}
 }
+
 

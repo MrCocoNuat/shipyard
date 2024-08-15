@@ -4,6 +4,7 @@ import React from 'react';
 import { Ship } from '../type/types.ts';
 import HullSelector from './HullSelector.tsx';
 import EquipmentSelector from './EquipmentSelector.tsx';
+import { massOf } from '../engine/MassEngine.ts';
 
 
 
@@ -15,6 +16,9 @@ function Selector() {
       <div className="selector">
         <div className="hull-selector">
           <HullSelector ship={ship} setShip={setShip}/>
+          {ship && <div>
+            <div>{`MASS: ${massOf(ship)}/${ship.hull.atUpgrade[ship.upgrade]?.maxMass}`}</div>
+          </div>}
           <EquipmentSelector ship={ship} setShip={setShip}/>
           {/* <Select options={Array.from(hullDefinitions).map(hullDefinition => ({value: hullDefinition, label: hullDefinition.name}))} onChange={(hullDefinition) => setShip(emptyShip(hullDefinition.value))}/> */}
           {/* <p>{ship && ship.hull.maxMass}</p> */}

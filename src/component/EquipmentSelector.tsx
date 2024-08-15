@@ -18,9 +18,16 @@ function EquipmentSelector({ship, setShip} : {ship : Ship | null, setShip : Reac
             <div key={equipmentTypeIndex /* totally fine to use this - if it changes, the whole ship needs to be wiped anyway*/}>
                 <div>{equipmentType}</div>
                 {Array.from({length: slotCount}, (_, equipmentIndex) =>
-                    <Select options={toOptions(equipment[equipmentType])} 
-                    defaultValue={toOption(ship.equipment[equipmentType][equipmentIndex])} // LOOKHERE when this quipment slot is empty, this is UNDEFINED passed into toOption!!
-                    onChange={chosenEquipment => chosenEquipment && setShip({...ship, equipment: {...ship.equipment, [equipmentType]: ship.equipment[equipmentType].slice().splice(equipmentIndex, 1, chosenEquipment.value as Equipment)}})}
+                    <Select key={equipmentIndex} options={toOptions(equipment[equipmentType])} 
+                    defaultValue={toOption(ship.equipment[equipmentType][equipmentIndex])}
+                    onChange={chosenEquipment => {
+                        if (chosenEquipment == null){
+                            return;
+                        }
+                        const copy = {...ship.equipment[equipmentType]};
+                        copy[equipmentIndex] = chosenEquipment.value as Equipment;
+                        chosenEquipment && setShip({...ship, equipment: {...ship.equipment, [equipmentType]: copy}});
+                    }}
                     /> // extract these - too shallow! this does not need full setShip!
                 )}
             </div>
