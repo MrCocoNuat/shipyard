@@ -3,12 +3,40 @@ import * as weaponJsons from './weapon.json';
 import * as armorJsons from './armor.json';
 import * as specialJsons from './special.json';
 import * as shieldJsons from './shield.json';
-import {Ablator, Armor, BloodRestrictionType, EquipmentType, Hull, RestrictionType, Shield, Special, Tier, Upgrade, Weapon, WeaponType} from '../type/types.ts';
+import {Ablator, Armor, BloodRestrictionType, Equipment, EquipmentType, Hull, RestrictionType, Shield, Special, Tier, Upgrade, Weapon, WeaponType} from '../type/types.ts';
+import { unlink } from 'fs';
+
+
+export const emptyHull = {
+    name: "(none)",
+    tier: null,
+    faction: null,
+    class: null,
+    unladenMass: 0,
+    atUpgrade: {
+        "MK1": {
+            slots: {},
+            maxMass: 0,
+            modifiers: []
+        }
+    }
+}
+
+export const emptyBlankEquipment = {
+    name: "(none)",
+    mass: 0,
+    modifiers: [],
+    restrictions: [],
+}
+
+export function emptyEquipmentOf(equipmentType: EquipmentType) : Equipment {
+    return {...emptyBlankEquipment, equipmentType} as unknown as Equipment; //TODO: temp
+}
 
 // some massaging is necessary to turn json into real definitions.
 // Typescript infers incoming tier and faction definitions and so on are only of type string, 
 // not of more the narrow types Tier or Faction
-export const hulls : Hull[] = Array.from(hullJsons) as Hull[];
+export const hulls : Hull[] = [emptyHull, ...Array.from(hullJsons)] as Hull[];
 export const weapons: Weapon[] = Array.from(weaponJsons)
                                     .filter(weapon => ! weapon.restrictions
                                                         .filter(restriction => restriction.restrictionType === RestrictionType.BLOOD)
