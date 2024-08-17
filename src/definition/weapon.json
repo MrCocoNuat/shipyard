@@ -1,7 +1,7 @@
 [
     {
         "name": "Vicious Ray 1",
-        "mass": 3994,
+        "mass": 2939,
         "weaponType": "RAY_CANNON",
         "damageType": "ENERGY",
         "dps": 21894,

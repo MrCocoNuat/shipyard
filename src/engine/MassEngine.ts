@@ -15,14 +15,6 @@ export function massOf(ship: Ship){
         massByEquipmentType[equipmentType] = sum(Object.values(equipmentList).map(equipment => equipment.mass || 0));
     }
     console.warn("massByEquipmentType:", massByEquipmentType);
-    // apply ship massModifiers
-    totalMass += sum(Object.values(massByEquipmentType));
-    let additionalMass = 0;
-    for (const shipMassModifier of massModifiers.filter(massModifier => massModifier.equipmentType === null)){
-        additionalMass += shipMassModifier.massPercent * totalMass / 100;
-    }
-    console.warn("ship modifier additional mass:", additionalMass);
-    totalMass += additionalMass;
 
     // apply equipment-specific massModifiers NOT to modified mass
     const additionalMassByEquipmentType = {};
@@ -31,7 +23,18 @@ export function massOf(ship: Ship){
         for (const relevantMassModifier of massModifiers.filter(massModifier => massModifier.equipmentType === equipmentType)){
             additionalMassByEquipmentType[equipmentType] += relevantMassModifier.massPercent * massByEquipmentType[equipmentType] / 100;
         }
+        additionalMassByEquipmentType[equipmentType] = Math.round(additionalMassByEquipmentType[equipmentType]);
     }
+    totalMass += sum(Object.values(massByEquipmentType));
+
+    // apply ship massModifiers to MODIFIED mass
+    let additionalMass = 0;
+    for (const shipMassModifier of massModifiers.filter(massModifier => massModifier.equipmentType === null)){
+        additionalMass += Math.round(shipMassModifier.massPercent * totalMass / 100);
+    }
+    console.warn("ship modifier additional mass:", additionalMass);
+    totalMass += additionalMass;
+    
     console.warn("additionalMassByEquipmentType:", additionalMassByEquipmentType);
     totalMass += sum(Object.values(additionalMassByEquipmentType));
     return totalMass;

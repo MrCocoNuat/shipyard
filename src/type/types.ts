@@ -216,7 +216,7 @@ export enum ModifierType {
 } 
 
 
-export type MassModifier = {
+export type MassModifier = { //TODO: WEAPON mass modifiers affect squadrons too
     modifierType: ModifierType.MASS,
     equipmentType: EquipmentType | null, // null implies whole ship mass
     massPercent: number
