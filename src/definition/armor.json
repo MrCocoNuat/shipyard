@@ -151,5 +151,27 @@
                 "allowedFactions": ["NIGHTFALL_COALITION"]
             }
         ]
+    },
+    {
+        "name": "Void Strident Armor 3",
+        "mass": 3450,
+        "health": 625000,
+        "modifiers": [
+            {
+                "modifierType": "ARMOR_RESISTANCE",
+                "damageType": "VOID",
+                "resistancePercent": 50
+            }
+        ],
+        "restrictions": [
+            {
+                "restrictionType": "TIER",
+                "allowedTiers": ["T13"]
+            },
+            {
+                "restrictionType": "FACTION",
+                "allowedFactions": ["MARAUDERS"]
+            }
+        ]
     }
 ]

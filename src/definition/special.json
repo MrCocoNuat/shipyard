@@ -14,5 +14,53 @@
                 "allowedTiers": ["T13", "T14"]
             }
         ]
+    },
+    {
+        "name": "Resurgence System",
+        "modifiers": [
+            {
+                "modifierType": "MASS",
+                "equipmentType": null,
+                "massPercent": 5
+            }
+        ],
+        "restrictions": [
+            {
+                "restrictionType": "FACTION",
+                "allowedFactions": ["MARAUDERS"]
+            }
+        ]
+    },
+    {
+        "name": "Voltaic Thrusters 3",
+        "modifiers": [
+            {
+                "modifierType": "MASS",
+                "equipmentType": null,
+                "massPercent": 10
+            }
+        ],
+        "restrictions": [
+            {
+                "restrictionType": "FACTION",
+                "allowedFactions": ["MARAUDERS"]
+            }
+        ]
+    },
+    {
+        "name": "Agility Field Compact Generator",
+        "modifiers": [
+            {
+                "modifierType": "MASS",
+                "equipmentType": null,
+                "massPercent": 3
+            }
+        ],
+        "restrictions": [
+            {
+                "restrictionType": "FACTION",
+                "allowedFactions": ["MARAUDERS"]
+            }
+        ]
     }
 ]

@@ -89,6 +89,15 @@ export type Shield = {
     restrictions: Restriction[]
 }
 
+export type Hangar = {
+    equipmentType: EquipmentType.HANGAR,
+    name: string,
+    mass: number,
+    dps: number,
+    modifiers: Modifier[],
+    restrictions: Restriction[]
+}
+
 export type Ablator = {
     equipmentType: EquipmentType.ABLATOR,
     name: string,

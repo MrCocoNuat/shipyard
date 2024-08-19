@@ -3,7 +3,8 @@ import * as weaponJsons from './weapon.json';
 import * as armorJsons from './armor.json';
 import * as specialJsons from './special.json';
 import * as shieldJsons from './shield.json';
-import {Ablator, Armor, BloodRestrictionType, Equipment, EquipmentType, Hull, RestrictionType, Shield, Special, Tier, Upgrade, Weapon, WeaponType} from '../type/types.ts';
+import * as hangarJsons from './hangar.json';
+import {Ablator, Armor, BloodRestrictionType, Equipment, EquipmentType, Hangar, Hull, RestrictionType, Shield, Special, Tier, Upgrade, Weapon, WeaponType} from '../type/types.ts';
 import { unlink } from 'fs';
 
 
@@ -49,7 +50,7 @@ export const ablators = [emptyEquipmentOf(EquipmentType.ABLATOR)] as const;
 export const screens = [emptyEquipmentOf(EquipmentType.SCREEN)] as const;
 export const spawners = [emptyEquipmentOf(EquipmentType.SPAWNER)] as const;
 export const resistors = [emptyEquipmentOf(EquipmentType.RESISTOR)] as const;
-export const hangars = [emptyEquipmentOf(EquipmentType.HANGAR)] as const;
+export const hangars = [emptyEquipmentOf(EquipmentType.HANGAR), ...Array.from(hangarJsons).map(hangarJson => ({...hangarJson, equipmentType: EquipmentType.HANGAR}))] as Hangar[];
 export const triggers = [emptyEquipmentOf(EquipmentType.TRIGGER)] as const;
 export const operations = [emptyEquipmentOf(EquipmentType.OPERATION)] as const;
 export const experimentalSalvages = [emptyEquipmentOf(EquipmentType.EXPERIMENTAL_SALVAGE)] as const;

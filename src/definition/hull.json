@@ -390,5 +390,40 @@
                 }
             }
         }
+    },
+    {
+        "name": "Baron",
+        "tier": "T13",
+        "faction": "MARAUDERS",
+        "class": "CARRIER",
+        "unladenMass": 900,
+        "atUpgrade": {
+            "MK1": {
+                "maxMass": 24000,
+                "slots": {
+                    "HANGAR": 6,
+                    "ARMOR": 3,
+                    "SHIELD": 2,
+                    "SPECIAL": 3
+                },
+                "modifiers": [
+                    {
+                        "modifierType": "MASS",
+                        "equipmentType": "HANGAR",
+                        "massPercent": -55
+                    },
+                    {
+                        "modifierType": "MASS",
+                        "equipmentType": "ARMOR",
+                        "massPercent": -35
+                    },
+                    {
+                        "modifierType": "MASS",
+                        "equipmentType": "SHIELD",
+                        "massPercent": -55
+                    }
+                ]
+            }
+        }
     }
 ]

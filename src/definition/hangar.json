@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Vassal Drone 1",
+        "mass": 3000,
+        "dps": 34874,
+        "modifiers": [],
+        "restrictions": [
+            {
+                "restrictionType": "TIER",
+                "allowedTiers": ["T13"]
+            },
+            {
+                "restrictionType": "FACTION",
+                "allowedFactions": ["MARAUDERS"]
+            }
+        ]
+    },
+    {
+        "name": "Vassal Drone 2",
+        "mass": 3715,
+        "dps": 53462,
+        "modifiers": [],
+        "restrictions": [
+            {
+                "restrictionType": "TIER",
+                "allowedTiers": ["T13"]
+            },
+            {
+                "restrictionType": "FACTION",
+                "allowedFactions": ["MARAUDERS"]
+            }
+        ]
+    },
+    {
+        "name": "Vassal Drone 3",
+        "mass": 5000,
+        "dps": 65458,
+        "modifiers": [],
+        "restrictions": [
+            {
+                "restrictionType": "TIER",
+                "allowedTiers": ["T13"]
+            },
+            {
+                "restrictionType": "FACTION",
+                "allowedFactions": ["MARAUDERS"]
+            }
+        ]
+    }
+]

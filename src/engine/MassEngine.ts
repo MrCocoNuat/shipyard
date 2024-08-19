@@ -15,6 +15,7 @@ export function massOf(ship: Ship){
         massByEquipmentType[equipmentType] = sum(Object.values(equipmentList).map(equipment => equipment.mass || 0));
     }
     console.warn("massByEquipmentType:", massByEquipmentType);
+    totalMass += sum(Object.values(massByEquipmentType));
 
     // apply equipment-specific massModifiers NOT to modified mass
     const additionalMassByEquipmentType = {};
@@ -25,7 +26,8 @@ export function massOf(ship: Ship){
         }
         additionalMassByEquipmentType[equipmentType] = Math.round(additionalMassByEquipmentType[equipmentType]);
     }
-    totalMass += sum(Object.values(massByEquipmentType));
+    console.warn("additionalMassByEquipmentType:", additionalMassByEquipmentType);
+    totalMass += sum(Object.values(additionalMassByEquipmentType));
 
     // apply ship massModifiers to MODIFIED mass
     let additionalMass = 0;
@@ -35,7 +37,6 @@ export function massOf(ship: Ship){
     console.warn("ship modifier additional mass:", additionalMass);
     totalMass += additionalMass;
     
-    console.warn("additionalMassByEquipmentType:", additionalMassByEquipmentType);
-    totalMass += sum(Object.values(additionalMassByEquipmentType));
+
     return totalMass;
 }

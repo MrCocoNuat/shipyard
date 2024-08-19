@@ -155,5 +155,27 @@
                 "allowedFactions": ["NIGHTFALL_COALITION"]
             }
         ]
+    },
+    {
+        "name": "Void Shield 3",
+        "mass": 3450,
+        "energy": 610000,
+        "modifiers": [
+            {
+                "modifierType": "SHIELD_RESISTANCE",
+                "damageType": "VOID",
+                "resistancePercent": 50
+            }
+        ],
+        "restrictions": [
+            {
+                "restrictionType": "TIER",
+                "allowedTiers": ["T13"]
+            },
+            {
+                "restrictionType": "FACTION",
+                "allowedFactions": ["MARAUDERS"]
+            }
+        ]
     }
 ]
