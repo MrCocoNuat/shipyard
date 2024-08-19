@@ -29,37 +29,37 @@ export const emptyBlankEquipment = {
     restrictions: [],
 }
 
-export function emptyEquipmentOf(equipmentType: EquipmentType) : Equipment {
-    return {...emptyBlankEquipment, equipmentType} as unknown as Equipment; //TODO: temp
+export function emptyEquipmentOf<T extends Equipment>(equipmentType: EquipmentType) : T {
+    return {...emptyBlankEquipment, equipmentType} as unknown as T; //TODO: temp
 }
 
 // some massaging is necessary to turn json into real definitions.
 // Typescript infers incoming tier and faction definitions and so on are only of type string, 
 // not of more the narrow types Tier or Faction
 export const hulls : readonly Hull[] = [emptyHull, ...Array.from(hullJsons)] as Hull[];
-export const weapons: readonly Weapon[] = Array.from(weaponJsons)
+export const weapons: readonly Weapon[] = [emptyEquipmentOf(EquipmentType.WEAPON), ...Array.from(weaponJsons)
                                     .filter(weapon => ! weapon.restrictions
                                                         .filter(restriction => restriction.restrictionType === RestrictionType.BLOOD)
                                                         .some(restriction => restriction.bloodRestrictionType === BloodRestrictionType.MUST_BE_BLOOD)) // exclude MUST_BE_BLOOD weapons
-                                    .map(weaponJson => ({...weaponJson, equipmentType: EquipmentType.WEAPON})) as Weapon[];
-export const armor: readonly Armor[] = Array.from(armorJsons).map(armorJson => ({...armorJson, equipmentType: EquipmentType.ARMOR})) as Armor[];
-export const specials: readonly Special[] = Array.from(specialJsons).map(specialJson => ({...specialJson, equipmentType: EquipmentType.SPECIAL})) as Special[];
-export const shields: readonly Shield[] = Array.from(shieldJsons).map(shieldJson => ({...shieldJson, equipmentType: EquipmentType.SHIELD})) as Shield[];
-export const ablators = [] as Ablator[];
-export const screens = [] as const;
-export const spawners = [] as const;
-export const resistors = [] as const;
-export const hangars = [] as const;
-export const triggers = [] as const;
-export const operations = [] as const;
-export const experimentalSalvages = [] as const;
-export const upgrades = [] as const;
-export const skins = [] as const;
-export const bloodWeapons : readonly Weapon[] = Array.from(weaponJsons)
+                                    .map(weaponJson => ({...weaponJson, equipmentType: EquipmentType.WEAPON}))] as Weapon[];
+export const armor: readonly Armor[] = [emptyEquipmentOf(EquipmentType.ARMOR), ...Array.from(armorJsons).map(armorJson => ({...armorJson, equipmentType: EquipmentType.ARMOR}))] as Armor[];
+export const specials: readonly Special[] =[emptyEquipmentOf(EquipmentType.SPECIAL), ...Array.from(specialJsons).map(specialJson => ({...specialJson, equipmentType: EquipmentType.SPECIAL}))] as Special[];
+export const shields: readonly Shield[] = [emptyEquipmentOf(EquipmentType.SHIELD), ...Array.from(shieldJsons).map(shieldJson => ({...shieldJson, equipmentType: EquipmentType.SHIELD}))] as Shield[];
+export const ablators = [emptyEquipmentOf(EquipmentType.ABLATOR)] as const;
+export const screens = [emptyEquipmentOf(EquipmentType.SCREEN)] as const;
+export const spawners = [emptyEquipmentOf(EquipmentType.SPAWNER)] as const;
+export const resistors = [emptyEquipmentOf(EquipmentType.RESISTOR)] as const;
+export const hangars = [emptyEquipmentOf(EquipmentType.HANGAR)] as const;
+export const triggers = [emptyEquipmentOf(EquipmentType.TRIGGER)] as const;
+export const operations = [emptyEquipmentOf(EquipmentType.OPERATION)] as const;
+export const experimentalSalvages = [emptyEquipmentOf(EquipmentType.EXPERIMENTAL_SALVAGE)] as const;
+export const upgrades = [emptyEquipmentOf(EquipmentType.UPGRADE)] as const;
+export const skins = [emptyEquipmentOf(EquipmentType.SKIN)] as const;
+export const bloodWeapons : readonly Weapon[] = [emptyEquipmentOf(EquipmentType.WEAPON), ...Array.from(weaponJsons)
                                 .filter(weapon => weapon.restrictions
                                                     .filter(restriction => restriction.restrictionType === RestrictionType.BLOOD)
                                                     .some(restriction => restriction.bloodRestrictionType === BloodRestrictionType.MUST_BE_BLOOD || restriction.bloodRestrictionType == BloodRestrictionType.CAN_BE_BLOOD))  // exclude any that are not CAN_BE_BLOOD or MUST_BE_BLOOD
-                                .map(weaponJson => ({...weaponJson, equipmentType: EquipmentType.WEAPON})) as Weapon[];
+                                .map(weaponJson => ({...weaponJson, equipmentType: EquipmentType.WEAPON}))] as Weapon[];
 
 export const equipment = {
     [EquipmentType.WEAPON]: weapons,

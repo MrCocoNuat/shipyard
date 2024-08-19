@@ -17,6 +17,7 @@ function SingleCategoryEquipmentSelector({ship, setShip, equipmentType, slotCoun
             chosenEquipment && setShip({...ship, equipment: {...ship.equipment, [equipmentType]: copy}});
         }}
         /> // extract these - too shallow! this does not need full setShip!
+        // also resetting will not work if ship is the only prop since it never changed!
     )
 }
 

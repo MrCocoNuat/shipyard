@@ -1,6 +1,6 @@
 import { Equipment, EquipmentType, Hull, Ship, Upgrade } from "../type/types.ts";
 import Select from 'react-select';
-import {hulls} from '../definition/DefinitionProvider.ts';
+import {emptyEquipmentOf, hulls} from '../definition/DefinitionProvider.ts';
 import React from "react";
 import { toOption, toOptionRaw, toOptions, toOptionsRaw } from "./labeler.ts";
 import { getAllEnumValues } from "enum-for";
@@ -20,7 +20,7 @@ function emptyEquipment(hull: Hull | null, upgrade : Upgrade) :  {[equipmentType
         throw Error(`Upgrade not supported ${hull}, ${upgrade}`);    
     }
     const slotConfig = upgradeConfig.slots;
-    getAllEnumValues(EquipmentType).forEach(equipmentType => equipment[equipmentType] = Array(slotConfig[equipmentType] || 0));
+    getAllEnumValues(EquipmentType).forEach(equipmentType => equipment[equipmentType] = Array.from({length: slotConfig[equipmentType] || 0}).fill(emptyEquipmentOf(equipmentType)));
     return equipment as {[equipmentType in EquipmentType] : Equipment[]};
 }
 
