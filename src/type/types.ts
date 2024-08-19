@@ -1,5 +1,3 @@
-import { DotToken, EnumType, EqualsToken } from "typescript";
-
 export enum RestrictionType {
     TIER = "TIER",
     FACTION = "FACTION",

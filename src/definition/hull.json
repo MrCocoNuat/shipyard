@@ -342,7 +342,7 @@
             "ELITE": {
                 "maxMass": 24000,
                 "slots": {
-                    "BLOOD_WEAPON": 4,
+                    "BLOOD_WEAPON": 5,
                     "ARMOR": 3,
                     "SHIELD": 3,
                     "SPECIAL": 2,
