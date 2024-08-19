@@ -36,15 +36,15 @@ export function emptyEquipmentOf(equipmentType: EquipmentType) : Equipment {
 // some massaging is necessary to turn json into real definitions.
 // Typescript infers incoming tier and faction definitions and so on are only of type string, 
 // not of more the narrow types Tier or Faction
-export const hulls : Hull[] = [emptyHull, ...Array.from(hullJsons)] as Hull[];
-export const weapons: Weapon[] = Array.from(weaponJsons)
+export const hulls : readonly Hull[] = [emptyHull, ...Array.from(hullJsons)] as Hull[];
+export const weapons: readonly Weapon[] = Array.from(weaponJsons)
                                     .filter(weapon => ! weapon.restrictions
                                                         .filter(restriction => restriction.restrictionType === RestrictionType.BLOOD)
                                                         .some(restriction => restriction.bloodRestrictionType === BloodRestrictionType.MUST_BE_BLOOD)) // exclude MUST_BE_BLOOD weapons
                                     .map(weaponJson => ({...weaponJson, equipmentType: EquipmentType.WEAPON})) as Weapon[];
-export const armor: Armor[] = Array.from(armorJsons).map(armorJson => ({...armorJson, equipmentType: EquipmentType.ARMOR})) as Armor[];
-export const specials: Special[] = Array.from(specialJsons).map(specialJson => ({...specialJson, equipmentType: EquipmentType.SPECIAL})) as Special[];
-export const shields: Shield[] = Array.from(shieldJsons).map(shieldJson => ({...shieldJson, equipmentType: EquipmentType.SHIELD})) as Shield[];
+export const armor: readonly Armor[] = Array.from(armorJsons).map(armorJson => ({...armorJson, equipmentType: EquipmentType.ARMOR})) as Armor[];
+export const specials: readonly Special[] = Array.from(specialJsons).map(specialJson => ({...specialJson, equipmentType: EquipmentType.SPECIAL})) as Special[];
+export const shields: readonly Shield[] = Array.from(shieldJsons).map(shieldJson => ({...shieldJson, equipmentType: EquipmentType.SHIELD})) as Shield[];
 export const ablators = [] as Ablator[];
 export const screens = [] as const;
 export const spawners = [] as const;
@@ -55,7 +55,7 @@ export const operations = [] as const;
 export const experimentalSalvages = [] as const;
 export const upgrades = [] as const;
 export const skins = [] as const;
-export const bloodWeapons = Array.from(weaponJsons)
+export const bloodWeapons : readonly Weapon[] = Array.from(weaponJsons)
                                 .filter(weapon => weapon.restrictions
                                                     .filter(restriction => restriction.restrictionType === RestrictionType.BLOOD)
                                                     .some(restriction => restriction.bloodRestrictionType === BloodRestrictionType.MUST_BE_BLOOD || restriction.bloodRestrictionType == BloodRestrictionType.CAN_BE_BLOOD))  // exclude any that are not CAN_BE_BLOOD or MUST_BE_BLOOD
