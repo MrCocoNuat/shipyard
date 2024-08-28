@@ -32,18 +32,15 @@ function upgradeChangedShip(ship : Ship, newUpgrade: Upgrade) : Ship {
 function equipmentForCopiedFrom(hull: Hull | null, upgrade : Upgrade, equipmentSource : Ship) {
     // this establishes slot config. 
     const equipment = emptyEquipmentSetFor(hull, upgrade);
+    
     getAllEnumValues(EquipmentType).forEach(equipmentType => {
         const sourceEquipment = equipmentSource.equipment[equipmentType] || [];
         console.log(equipmentType, sourceEquipment);
         // fill in these with the old ship's equipment
         const spliceCount = Math.min(Object.entries(sourceEquipment).length, equipment[equipmentType].length)
-        console.log(spliceCount);
         equipment[equipmentType].splice(0,spliceCount, ...(sourceEquipment.slice(0, spliceCount)));
-        // and then the rest of the slots, if any, with emptyEquipment
-
-        console.log(equipmentType, equipment[equipmentType]);
+        // and then the rest of the slots, if any, stay as emptyEquipment
     });
-  
     return equipment;
   }
 
