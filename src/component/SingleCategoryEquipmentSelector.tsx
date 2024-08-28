@@ -7,12 +7,12 @@ import React from "react";
 function SingleCategoryEquipmentSelector({ship, setShip, equipmentType, slotCount} : {ship: Ship, setShip : React.Dispatch<React.SetStateAction<Ship | null>>, equipmentType : EquipmentType, slotCount: number}) {
     return Array.from({length: slotCount}, (_, equipmentIndex) =>
         <Select key={equipmentIndex} options={toOptions<Equipment>(equipment[equipmentType])} 
-        defaultValue={toOption(ship.equipment[equipmentType][equipmentIndex])}
+        value={toOption(ship.equipment[equipmentType][equipmentIndex])}
         onChange={chosenEquipment => {
             if (chosenEquipment == null){
                 return;
             }
-            const copy = {...ship.equipment[equipmentType]};
+            const copy = [...ship.equipment[equipmentType]];
             copy[equipmentIndex] = chosenEquipment.value as Equipment;
             chosenEquipment && setShip({...ship, equipment: {...ship.equipment, [equipmentType]: copy}});
         }}

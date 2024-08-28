@@ -8,7 +8,6 @@ function EquipmentSelector({ship, setShip} : {ship : Ship | null, setShip : Reac
         return <></>; // nothing to display, this ship is invalid
     }
     const slotConfig = upgradeConfig.slots;
-    console.warn(slotConfig);
     console.warn(ship.equipment);
     return <div>
         {Object.entries(slotConfig).filter(([, slotCount]) => slotCount > 0).map(([equipmentType, slotCount], equipmentTypeIndex) => 

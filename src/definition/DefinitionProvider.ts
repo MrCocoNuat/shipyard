@@ -81,7 +81,7 @@ export const equipment = {
 } as const;
 
 
-console.log("Hellion is tier 14:",  hulls[0].tier == Tier.T14);
-console.log("Segmenter is tier 13:", hulls[1].tier== Tier.T13);
-console.log("Hellion's innate modifiers at mk4:", hulls[0].atUpgrade[Upgrade.MK4]?.modifiers);
-console.log("Hellion's weapon and blood weapon slots at elite:", hulls[0].atUpgrade[Upgrade.ELITE]?.slots[EquipmentType.WEAPON], hulls[0].atUpgrade[Upgrade.ELITE]?.slots[EquipmentType.BLOOD_WEAPON]);
+// console.log("Hellion is tier 14:",  hulls[0].tier == Tier.T14);
+// console.log("Segmenter is tier 13:", hulls[1].tier== Tier.T13);
+// console.log("Hellion's innate modifiers at mk4:", hulls[0].atUpgrade[Upgrade.MK4]?.modifiers);
+// console.log("Hellion's weapon and blood weapon slots at elite:", hulls[0].atUpgrade[Upgrade.ELITE]?.slots[EquipmentType.WEAPON], hulls[0].atUpgrade[Upgrade.ELITE]?.slots[EquipmentType.BLOOD_WEAPON]);

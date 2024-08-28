@@ -57,7 +57,7 @@ export enum EquipmentType {
 }
 const DEFENSE_TYPES = [EquipmentType.SHIELD, EquipmentType.ABLATOR, EquipmentType.SCREEN] as const;
 
-export type Equipment = Weapon | Armor | Shield | Ablator | Special;
+export type Equipment = Weapon | Armor | Shield | Ablator | Special | Hangar;
 
 export type Weapon = {
     equipmentType: EquipmentType.WEAPON,
@@ -276,7 +276,7 @@ export type Hull = {
 export type Ship = {
     hull: Hull,
     upgrade: Upgrade,
-    equipment: {[equipmentType in EquipmentType] : {[index in number]: Equipment}}
+    equipment: {[equipmentType in EquipmentType] : Equipment[]}
 }
 
 

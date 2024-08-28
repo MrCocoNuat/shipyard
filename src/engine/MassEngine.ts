@@ -11,7 +11,6 @@ export function massOf(ship: Ship){
     const massByEquipmentType = {};
     for (const equipmentType in EquipmentType){
         const equipmentList : {[index in number]: Equipment} = ship.equipment[equipmentType];
-        console.log(equipmentType, equipmentList);
         massByEquipmentType[equipmentType] = sum(Object.values(equipmentList).map(equipment => equipment.mass || 0));
     }
     console.warn("massByEquipmentType:", massByEquipmentType);
