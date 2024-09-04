@@ -278,5 +278,13 @@ export type Ship = {
     upgrade: Upgrade,
     equipment: {[equipmentType in EquipmentType] : Equipment[]}
 }
+export type Complement = Ship["equipment"]
 
-
+// it is really annoying to have to put this everywhere
+export type SelectOption<T> = {value: T, label: string}
+export type SetState<T> = React.Dispatch<React.SetStateAction<T>>
+export type Consumer<T> = (arg: T) => void
+export type BiConsumer<T,U> = (arg1: T, arg2: U) => void
+export function isDefined<T>(arg: T | null | undefined) : arg is T {
+    return arg !== null && arg !== undefined;
+}
