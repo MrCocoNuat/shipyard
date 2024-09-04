@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { createContext, useState } from 'react';
 import React from 'react';
 import { Complement, SetState, Ship } from '../type/types.ts';
 import HullSelector from './HullSelector.tsx';
 import EquipmentSelector from './EquipmentSelector.tsx';
 import { massOf } from '../engine/MassEngine.ts';
 
+export const ShipContext = createContext(null as Ship | null);
 
 function setEquipment(ship : Ship | null, setShip : SetState<Ship | null>,  newEquipment : Complement){
   if (ship == null) return;
@@ -17,15 +18,17 @@ function Selector() {
     console.log("Current ship:", ship);
 
     return (
+      <ShipContext.Provider value={ship}>
       <div className="selector">
         <div className="hull-selector">
-          <HullSelector {...{ship, setShip}}/>
+          <HullSelector {...{setShip}}/>
           {ship && <div>
             <div>{`MASS: ${massOf(ship)}/${ship.hull.atUpgrade[ship.upgrade]?.maxMass}`}</div>
           </div>}
-          <EquipmentSelector {...{ship}} setEquipment={newEquipment => setEquipment(ship, setShip, newEquipment)} />
+          <EquipmentSelector setEquipment={newEquipment => setEquipment(ship, setShip, newEquipment)} />
         </div>
       </div>
+      </ShipContext.Provider>
     );
   }
   

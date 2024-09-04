@@ -1,9 +1,10 @@
 import { Equipment, EquipmentType, Hull, Ship, Upgrade } from "../type/types.ts";
 import Select from 'react-select';
 import {emptyEquipmentOf, equipment, hulls} from '../definition/DefinitionProvider.ts';
-import React from "react";
+import React, { useContext } from "react";
 import { toOption, toOptionRaw, toOptions, toOptionsRaw } from "./labeler.ts";
 import { getAllEnumValues } from "enum-for";
+import { ShipContext } from "./Planner.tsx";
 
 function upgradesOf(hull: Hull){
     return Object.values(Upgrade).filter(upgrade => hull.atUpgrade[upgrade]);
@@ -43,8 +44,8 @@ function equipmentForCopiedFrom(hull: Hull | null, upgrade : Upgrade, equipmentS
     return equipment;
   }
 
-// yes, some of these should be useContext. I don't care.
-function HullSelector({ship, setShip} : {ship : Ship | null, setShip : React.Dispatch<React.SetStateAction<Ship | null>>}) {
+function HullSelector({setShip} : {setShip : React.Dispatch<React.SetStateAction<Ship | null>>}) {
+    const ship = useContext(ShipContext);
     return <div>
         <Select options={toOptions(hulls)} value={ship && toOption(ship.hull)} 
         onChange={selection => selection && setShip(emptyShip(selection.value, Upgrade.MK1))}/>

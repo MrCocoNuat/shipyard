@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Complement, Consumer, Equipment, EquipmentType, isDefined, SetState, Ship } from "../type/types";
 import SingleCategoryEquipmentSelector from "./SingleCategoryEquipmentSelector.tsx";
 import { getAllEnumEntries, getAllEnumValues } from "enum-for";
+import { ShipContext } from "./Planner.tsx";
 
 function setSingleCategoryEquipment(ship: Ship, setEquipment: Consumer<Complement>, equipmentType : EquipmentType, newEquipment: Equipment[]){
     const copy = ship.equipment;
@@ -9,7 +10,10 @@ function setSingleCategoryEquipment(ship: Ship, setEquipment: Consumer<Complemen
     setEquipment(copy);
 }
 
-function EquipmentSelector({ship, setEquipment} : {ship : Ship | null, setEquipment : Consumer<Complement>}) {
+function EquipmentSelector({setEquipment} : {setEquipment : Consumer<Complement>}) {
+
+    const ship = useContext(ShipContext);
+
     const upgradeConfig = ship?.hull.atUpgrade[ship.upgrade];
     if (!upgradeConfig){
         return <></>; // nothing to display, this ship is invalid
