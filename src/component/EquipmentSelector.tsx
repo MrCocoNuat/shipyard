@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
-import { Complement, Consumer, Equipment, EquipmentType, isDefined, SetState, Ship } from "../type/types";
+import { Complement, Consumer, Equipment, EquipmentType, Ship } from "../type/types";
 import SingleCategoryEquipmentSelector from "./SingleCategoryEquipmentSelector.tsx";
-import { getAllEnumEntries, getAllEnumValues } from "enum-for";
 import { ShipContext } from "./Planner.tsx";
 
 function setSingleCategoryEquipment(ship: Ship, setEquipment: Consumer<Complement>, equipmentType : EquipmentType, newEquipment: Equipment[]){

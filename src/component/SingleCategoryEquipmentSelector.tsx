@@ -1,5 +1,5 @@
 import Select from "react-select";
-import { Consumer, Equipment, EquipmentType, SetState, Ship } from "../type/types.ts";
+import { Consumer, Equipment, EquipmentType, Ship } from "../type/types.ts";
 import { toOption, toOptions } from "./labeler.ts";
 import { equipment } from "../definition/DefinitionProvider.ts";
 import React, { useContext } from "react";

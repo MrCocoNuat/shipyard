@@ -1,6 +1,6 @@
 import { Equipment, EquipmentType, Hull, Ship, Upgrade } from "../type/types.ts";
 import Select from 'react-select';
-import {emptyEquipmentOf, equipment, hulls} from '../definition/DefinitionProvider.ts';
+import {emptyEquipmentOf, hulls} from '../definition/DefinitionProvider.ts';
 import React, { useContext } from "react";
 import { toOption, toOptionRaw, toOptions, toOptionsRaw } from "./labeler.ts";
 import { getAllEnumValues } from "enum-for";
