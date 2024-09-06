@@ -4,6 +4,7 @@ import { Complement, SetState, Ship } from '../type/types.ts';
 import HullSelector from './HullSelector.tsx';
 import EquipmentSelector from './EquipmentSelector.tsx';
 import { massOf } from '../engine/MassEngine.ts';
+import MassGauge from './MassGauge.tsx';
 
 export const ShipContext = createContext(null as Ship | null);
 
@@ -22,9 +23,7 @@ function Selector() {
       <div className="selector">
         <div className="hull-selector">
           <HullSelector {...{setShip}}/>
-          {ship && <div>
-            <div>{`MASS: ${massOf(ship)}/${ship.hull.atUpgrade[ship.upgrade]?.maxMass}`}</div>
-          </div>}
+          {ship && <MassGauge target={ship}/>}
           <EquipmentSelector setEquipment={newEquipment => setEquipment(ship, setShip, newEquipment)} />
         </div>
       </div>

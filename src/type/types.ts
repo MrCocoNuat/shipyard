@@ -279,6 +279,18 @@ export type Ship = {
     equipment: {[equipmentType in EquipmentType] : Equipment[]}
 }
 export type Complement = Ship["equipment"]
+export function isShip(ship : any) : ship is Ship {
+    return ship.hull !== undefined;
+}
+
+
+export type Fleet = {
+    ships: [Ship] | [Ship, Ship] | [Ship, Ship, Ship] | [Ship, Ship, Ship, Ship] | [Ship, Ship, Ship, Ship, Ship] | [Ship, Ship, Ship, Ship, Ship, Ship],
+}
+export function isFleet(fleet : any) : fleet is Fleet {
+    return fleet.ships !== undefined;
+}
+
 
 // it is really annoying to have to put this everywhere
 export type SelectOption<T> = {value: T, label: string}
