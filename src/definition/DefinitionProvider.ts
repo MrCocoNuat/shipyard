@@ -4,7 +4,8 @@ import * as armorJsons from './armor.json';
 import * as specialJsons from './special.json';
 import * as shieldJsons from './shield.json';
 import * as hangarJsons from './hangar.json';
-import {Ablator, Armor, BloodRestrictionType, Equipment, EquipmentType, Hangar, Hull, RestrictionType, Shield, Special, Tier, Upgrade, Weapon, WeaponType} from '../type/types.ts';
+import * as upgradeJsons from './upgrade.json';
+import {Ablator, Armor, BloodRestrictionType, Equipment, EquipmentType, Hangar, Hull, RestrictionType, Shield, Special, Tier, Upgrade, UpgradeEquipment, Weapon, WeaponType} from '../type/types.ts';
 import { unlink } from 'fs';
 
 
@@ -54,7 +55,7 @@ export const hangars = [emptyEquipmentOf(EquipmentType.HANGAR), ...Array.from(ha
 export const triggers = [emptyEquipmentOf(EquipmentType.TRIGGER)] as const;
 export const operations = [emptyEquipmentOf(EquipmentType.OPERATION)] as const;
 export const experimentalSalvages = [emptyEquipmentOf(EquipmentType.EXPERIMENTAL_SALVAGE)] as const;
-export const upgrades = [emptyEquipmentOf(EquipmentType.UPGRADE)] as const;
+export const upgrades = [, ...Array.from(upgradeJsons).map(upgradeJson => ({...upgradeJson, equipmentType: EquipmentType.UPGRADE}))] as UpgradeEquipment[];
 export const skins = [emptyEquipmentOf(EquipmentType.SKIN)] as const;
 export const bloodWeapons : readonly Weapon[] = [emptyEquipmentOf(EquipmentType.WEAPON), ...Array.from(weaponJsons)
                                 .filter(weapon => weapon.restrictions

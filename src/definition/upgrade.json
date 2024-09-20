@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Big Game Hunter 1",
+        "modifiers": [
+            {
+                "modifierType": "MASS",
+                "equipmentType": null,
+                "massPercent": 0
+            }
+        ],
+        "restrictions": [
+            {
+                "restrictionType": "TIER",
+                "allowedTiers": ["T14"]
+            },
+            {
+                "restrictionType": "FACTION",
+                "allowedFactions": ["NIGHTFALL_COALITION"]
+            },
+            {
+                "restrictionType": "CLASS",
+                "allowedClasses": ["BATTLECRUISER", "DREADNOUGHT"]
+            }
+        ]
+    }
+]

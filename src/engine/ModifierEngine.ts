@@ -1,17 +1,9 @@
 import { ModifierFlags } from "typescript";
-import { Equipment, EquipmentType, isMassModifier, MassModifier, Ship, Upgrade } from "../type/types.ts";
+import { Equipment, EquipmentType, isMassModifier, MassModifier, Modifier, Ship, Upgrade } from "../type/types.ts";
 
-export function massModifiersOf(ship: Ship){
-    // each equipment can generate massModifiers for any equipmentType or the whole ship
-    // nevertheless it is OK to put all of them together, they are associative
-    const upgradeConfig = ship.hull.atUpgrade[ship.upgrade];
-    if (upgradeConfig == null){
-        throw Error(`upgrade not supported, how did you do this? ${ship}`);
-    }
-    if (upgradeConfig.modifiers === undefined){
-        return [];
-    }
-    const massModifiers = upgradeConfig.modifiers.filter(isMassModifier);
+// each equipment can generate massModifiers for any equipmentType or the whole ship
+export function equipmentMassModifiersOf(ship: Ship){
+    const massModifiers : MassModifier[] = [];
     for(const equipmentType in EquipmentType){
         const equipmentList : {[index in number]: Equipment} = ship.equipment[equipmentType];
         if (equipmentList === undefined){
@@ -24,4 +16,16 @@ export function massModifiersOf(ship: Ship){
         }
     }
     return massModifiers;
+}
+
+// these are done differently! applied multiplicatively on the additive equipment mass modifiers
+export function innateMassModifiersOf(ship: Ship){
+    const upgradeConfig = ship.hull.atUpgrade[ship.upgrade];
+    if (upgradeConfig == null){
+        throw Error(`upgrade not supported, how did you do this? ${ship}`);
+    }
+    if (upgradeConfig.modifiers === undefined){
+        return [];
+    }
+    return upgradeConfig.modifiers.filter(isMassModifier);
 }

@@ -21,6 +21,69 @@
         ]
     },
     {
+        "name": "Vicious Ray 2",
+        "mass": 3994,
+        "weaponType": "RAY_CANNON",
+        "damageType": "ENERGY",
+        "dps": 28595,
+        "restrictions": [
+            {
+                "restrictionType": "TIER",
+                "allowedTiers": ["T14"]
+            },
+            {
+                "restrictionType": "FACTION",
+                "allowedFactions": ["NIGHTFALL_COALITION"]
+            },
+            {
+                "restrictionType": "BLOOD",
+                "bloodRestrictionType": "CAN_BE_BLOOD"
+            }
+        ]
+    },
+    {
+        "name": "Vicious Ray 3",
+        "mass": 5049,
+        "weaponType": "RAY_CANNON",
+        "damageType": "ENERGY",
+        "dps": 38130,
+        "restrictions": [
+            {
+                "restrictionType": "TIER",
+                "allowedTiers": ["T14"]
+            },
+            {
+                "restrictionType": "FACTION",
+                "allowedFactions": ["NIGHTFALL_COALITION"]
+            },
+            {
+                "restrictionType": "BLOOD",
+                "bloodRestrictionType": "CAN_BE_BLOOD"
+            }
+        ]
+    },
+    {
+        "name": "Blood Vicious Ray 4",
+        "mass": 5973,
+        "weaponType": "RAY_CANNON",
+        "damageType": "ENERGY",
+        "dps": 43815,
+        "restrictions": [
+            {
+                "restrictionType": "TIER",
+                "allowedTiers": ["T14"]
+            },
+            {
+                "restrictionType": "FACTION",
+                "allowedFactions": ["NIGHTFALL_COALITION"]
+            },
+            {
+                "restrictionType": "BLOOD",
+                "bloodRestrictionType": "MUST_BE_BLOOD"
+            }
+        ]
+    },
+    {
         "name": "Blood Aorta Vulcan 4",
         "mass": 6151,
         "weaponType": "VULCAN",

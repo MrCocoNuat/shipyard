@@ -6,6 +6,32 @@
                 "modifierType": "MASS",
                 "equipmentType": "WEAPON",
                 "massPercent": 3
+            },
+            {
+                "modifierType": "MASS",
+                "equipmentType": "BLOOD_WEAPON",
+                "massPercent": 3
+            }
+        ],
+        "restrictions": [
+            {
+                "restrictionType": "TIER",
+                "allowedTiers": ["T13", "T14"]
+            }
+        ]
+    },
+    {
+        "name": "Galvanic Conductors 1",
+        "modifiers": [
+            {
+                "modifierType": "MASS",
+                "equipmentType": "WEAPON",
+                "massPercent": 9
+            },
+            {
+                "modifierType": "MASS",
+                "equipmentType": "BLOOD_WEAPON",
+                "massPercent": 9
             }
         ],
         "restrictions": [
@@ -44,6 +70,26 @@
             {
                 "restrictionType": "FACTION",
                 "allowedFactions": ["MARAUDERS"]
+            }
+        ]
+    },
+    {
+        "name": "Adjoining Thruster",
+        "modifiers": [
+            {
+                "modifierType": "MASS",
+                "equipmentType": null,
+                "massPercent": 10
+            }
+        ],
+        "restrictions": [
+            {
+                "restrictionType": "FACTION",
+                "allowedFactions": ["VEGA_ALLIANCE", "NIGHTFALL_COALITION"]
+            },
+            {
+                "restrictionType": "TIER",
+                "allowedTiers": ["T13", "T14"]
             }
         ]
     },
