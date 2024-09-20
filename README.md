@@ -1,8 +1,12 @@
 # shipyard
 
+A fully-featured fleet planner for the online RTS Vega Conflict. 
+
 *project under construction*
 
-A fully-featured fleet planner for the online RTS Vega Conflict. Unfortunately I have come to despise both this game and playing it and I will vehemently discourage from even touching it anyone who values their own time even marginally. Thus I have also little motivation to continue working on this repository.
+### Don't Play this "Game"
+
+Unfortunately I have come to despise both this game and playing it and I will vehemently discourage from even touching it anyone who values their own time even marginally. Thus I have little motivation to continue working on this repository.
 
 Hopefully it will be useful to somebody.
 
